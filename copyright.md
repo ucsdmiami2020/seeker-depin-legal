@@ -1,6 +1,6 @@
 # Copyright & Attribution
 
-_Last updated 2026-09-27_
+_Last updated 2026-10-07_
 
 ## Copyright
 
@@ -8,11 +8,11 @@ _Last updated 2026-09-27_
 
 ## Trademarks
 
-Solana, Solana Mobile, Saga, Seeker, Seed Vault, CUDIS, BrushO, Helium, Nova Labs, RAKwireless, SenseCAP, Bobcat, Hivemapper, Bee Maps, GEODNET, Hyfix, XNET, WeatherXM, Wingbits, onocoy, Roam, NATIX, Starpower, Play Solana, PSG1 and Mobile Wallet Adapter are trademarks of their respective owners. The app uses these names nominatively to identify products and does not imply endorsement.
+Solana, Solana Mobile, Saga, Seeker, Seed Vault, CUDIS, BrushO, Helium, Nova Labs, RAKwireless, SenseCAP, Bobcat, Hivemapper, Bee Maps, GEODNET, Hyfix, XNET, WeatherXM, Wingbits, onocoy, Roam, NATIX, Starpower, Play Solana, PSG1, DeCharge, Jambo, JamboPhone, Karrier One, SuiPlay0X1, Suiball, Chirp, Freedom Factory, dGEN1, Dappnode, X and Mobile Wallet Adapter are trademarks of their respective owners. The app uses these names nominatively to identify products and does not imply endorsement. The “Most talked about” charts show daily post counts from X’s official API, collected before release. The app contains no posts, usernames or images from X and never contacts it.
 
 ## Imagery and icons
 
-The app intentionally contains no vendor product photography or logos. Device and category glyphs are from the Ionicons and Material Design Icons sets (MIT / Apache 2.0), via @expo/vector-icons.
+The app contains no vendor product photography or logos. Each device page has a Photos section that links to the maker’s own page, where their product photos are; a photo is shown inside the app only when it is openly licensed for commercial use and adaptation (CC0, public domain, CC BY or CC BY-SA), and it is credited, with a link to its source, directly beneath it. Device and category glyphs are from the Ionicons and Material Design Icons sets (MIT / Apache 2.0), via @expo/vector-icons.
 
 ## Open-source software
 
