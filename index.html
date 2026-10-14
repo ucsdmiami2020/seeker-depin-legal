@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seeker DePIN Explorer — a field guide to Solana hardware</title>
+<meta name="description" content="Seeker DePIN Explorer is an Android app for Seeker that catalogues the physical hardware behind Solana DePIN: specs, prices, how each device earns, and an evidence-based adoption score.">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="Seeker DePIN Explorer">
+<meta property="og:description" content="A field guide to the hardware behind Solana DePIN, for Seeker and Android.">
+<meta property="og:image" content="https://ucsdmiami2020.github.io/seeker-depin-legal/assets/icon.png">
+<!-- No external fonts, scripts, analytics or cookies: this page loads nothing from anyone else. -->
+<style>
+  :root {
+    --bg: #0B0B12; --card: #181826; --border: #26263A; --text: #F4F4FA; --muted: #A9A9C2;
+    --faint: #7E7E98; --green: #14F195; --purple: #9945FF; --blue: #19D4FF;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--blue); }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  header.top { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--text); text-decoration: none; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 16px; font-size: 15px; }
+  nav a:hover { color: var(--text); }
+
+  .hero { display: grid; gap: 32px; padding: 32px 0 48px; align-items: center; }
+  .eyebrow { color: var(--green); font-weight: 700; letter-spacing: .12em; font-size: 13px; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.08; margin: 0 0 16px; letter-spacing: -.02em; }
+  .lead { font-size: 18px; color: var(--muted); margin: 0 0 24px; max-width: 34em; }
+  .status {
+    display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--card); font-size: 14px; color: var(--muted);
+  }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 24px; max-width: 420px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; }
+  .stat b { display: block; font-size: 24px; }
+  .stat span { color: var(--muted); font-size: 14px; }
+  .phone { justify-self: center; width: min(300px, 80vw); border-radius: 28px; border: 1px solid var(--border); display: block; }
+
+  section { padding: 40px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 28px; margin: 0 0 8px; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .shots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; border-radius: 20px; border: 1px solid var(--border); display: block; }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  ul.plain { padding-left: 20px; margin: 0; color: var(--muted); }
+  ul.plain li { margin: 6px 0; }
+  ul.plain b { color: var(--text); }
+  .legal a { display: inline-block; margin: 0 16px 8px 0; }
+  footer { border-top: 1px solid var(--border); padding: 24px 0 40px; color: var(--faint); font-size: 14px; }
+  @media (min-width: 820px) { .hero { grid-template-columns: 1.3fr 1fr; padding: 56px 0 64px; } }
+  @media (max-width: 520px) { nav { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="" width="32" height="32">Seeker DePIN Explorer</a>
+    <nav aria-label="Page sections">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#publisher">Publisher</a>
+      <a href="#legal">Legal</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Solana DePIN hardware</p>
+        <h1>A field guide to the physical side of Solana</h1>
+        <p class="lead">
+          Seeker DePIN Explorer is a free Android app for the Solana Seeker phone and other Android devices. It catalogues
+          the phones, rings, hotspots, dashcams, sensors and EV chargers that earn on Solana — with specs, prices, how each
+          one earns, and an evidence-based adoption score — so you can understand the hardware before you buy it.
+        </p>
+        <span class="status">Submitted to the Solana dApp Store</span>
+        <div class="stats" aria-label="Catalog at a glance">
+          <div class="stat"><b>19</b><span>Solana devices</span></div>
+          <div class="stat"><b>16</b><span>networks</span></div>
+          <div class="stat"><b>6</b><span>on other chains</span></div>
+        </div>
+      </div>
+      <img class="phone" src="assets/shot-device.jpg" width="540" height="960"
+           alt="The app's device page for the Helium Mobile Hotspot: price, release year, adoption score and highlights.">
+    </div>
+
+    <section id="features" aria-labelledby="features-h">
+      <h2 id="features-h">What it does</h2>
+      <p class="sub">No account, no sign-up. Open it and browse.</p>
+      <div class="grid">
+        <div class="card"><h3>A curated catalog</h3><p>19 Solana devices across 16 networks, each with specs, list price, release date, timeline and links to the maker.</p></div>
+        <div class="card"><h3>Adoption confidence</h3><p>A 0–10 score built from five factors — time on market, installed base, independent reviews, community and payout record — with the evidence for every point.</p></div>
+        <div class="card"><h3>Most talked about</h3><p>Four charts ranking the top 10 devices by original posts on X, with momentum and talk set against the evidence. The method and every number are shown in the app.</p></div>
+        <div class="card"><h3>Compare side by side</h3><p>Put up to three devices next to each other: price, earnings model, specs and adoption score.</p></div>
+        <div class="card"><h3>See what you already hold</h3><p>Optionally connect a wallet to see which of these networks’ tokens you hold. Balances are read from public chain data; the app never sees your keys or sends a transaction.</p></div>
+        <div class="card"><h3>Beyond Solana</h3><p>Comparable hardware on Sui and Ethereum, kept in a clearly separate section and out of the Solana counts.</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="shots-h">
+      <h2 id="shots-h">Screens from the app</h2>
+      <p class="sub">Captured from the Android release build.</p>
+      <div class="shots">
+        <figure><img src="assets/shot-charts.jpg" width="540" height="960" loading="lazy" alt="Most talked about: a bar chart of the top 10 devices by posts on X."><figcaption>Most talked about</figcaption></figure>
+        <figure><img src="assets/shot-compare.jpg" width="540" height="960" loading="lazy" alt="The Compare tab with devices side by side."><figcaption>Compare</figcaption></figure>
+        <figure><img src="assets/shot-security.jpg" width="540" height="960" loading="lazy" alt="The Security tab listing the app's security controls."><figcaption>Security, explained in the app</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-h">
+      <h2 id="privacy-h">Privacy in one paragraph</h2>
+      <ul class="plain">
+        <li><b>No account, no ads, no analytics, no tracking.</b> Nothing about you is collected or sent anywhere.</li>
+        <li><b>One setting is stored on your phone</b> — whether to skip the opening film — and the Security tab can clear it.</li>
+        <li><b>The only network request</b> is to a public Solana node, and only after you choose to connect a wallet.</li>
+        <li><b>No dangerous Android permissions.</b> No camera, microphone, location, contacts or files.</li>
+      </ul>
+      <p class="sub" style="margin-top:16px">Full details: <a href="privacy-policy">Privacy Policy</a>.</p>
+    </section>
+
+    <section id="publisher" aria-labelledby="publisher-h">
+      <h2 id="publisher-h">Publisher</h2>
+      <div class="card">
+        <p style="color:var(--text);font-size:16px;margin-bottom:6px"><b>Rene Chacon</b> — independent developer</p>
+        <p>Seeker ID: ucsdmiami2020.skr</p>
+        <p>Contact: <a href="mailto:rchac005@gmail.com">rchac005@gmail.com</a></p>
+        <p style="margin-top:10px">Questions, corrections and device suggestions are welcome — the app can also open a prefilled public suggestion for you to review and post.</p>
+      </div>
+    </section>
+
+    <section id="legal" aria-labelledby="legal-h" class="legal">
+      <h2 id="legal-h">Legal</h2>
+      <p class="sub">The same documents shown in the app under About → Legal.</p>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="terms-of-use">Terms of Use &amp; EULA</a>
+      <a href="copyright">Copyright &amp; Attribution</a>
+    </section>
+  </main>
+
+  <footer>
+    Seeker DePIN Explorer is an independent app. It is not affiliated with, endorsed by or sponsored by Solana Mobile,
+    the Solana Foundation, or any device maker or network it lists; product names are trademarks of their owners.
+    Information only — not financial advice, and not an offer to sell hardware or tokens.
+  </footer>
+</div>
+</body>
+</html>
